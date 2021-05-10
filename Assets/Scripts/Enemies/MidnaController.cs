@@ -1,0 +1,41 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MidnaController : MonoBehaviour
+{
+    int remainingCams = 10;
+
+    public static MidnaController instance;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+    public static void LookedAtCams()
+    {
+        MidnaController.instance.remainingCams--;
+        if (MidnaController.instance.remainingCams == 0)
+        {
+            MidnaController.instance.SpawnRev();
+            MidnaController.instance.remainingCams = Random.Range((10 - Player.Night), 7);
+        }
+    }
+
+    public void SpawnRev()
+    {
+        Player.Midna = true;
+        // Show Midna in room
+    }
+}

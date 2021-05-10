@@ -10,7 +10,7 @@ public class TuckerController : MonoBehaviour
     /// </summary>
     void Start()
     {
-
+        StartCoroutine(nameof(main));
     }
 
     IEnumerator main()
