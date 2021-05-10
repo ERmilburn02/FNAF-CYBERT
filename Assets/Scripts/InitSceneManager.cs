@@ -14,6 +14,10 @@ public class InitSceneManager : MonoBehaviour
             DontDestroyOnLoad(go);
         }
 
+        var _goNM = new GameObject { name = "[NIGHT MANAGER]" };
+        _goNM.AddComponent<NightManager>();
+        DontDestroyOnLoad(_goNM);
+
         GameManager.InitVariables();
         GameManager.LoadGame();
         GameManager.SaveGame();

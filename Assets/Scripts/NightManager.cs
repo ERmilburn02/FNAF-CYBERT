@@ -22,11 +22,13 @@ public class NightManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    [ContextMenu("StartNight")]
     public void StartNight()
     {
         StartCoroutine(nameof(Night));
     }
 
+    [ContextMenu("EndNightManually")]
     public void EndNightManually()
     {
         StopCoroutine(nameof(Night));
