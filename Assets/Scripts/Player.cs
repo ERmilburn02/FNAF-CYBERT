@@ -1,6 +1,7 @@
 ﻿public static class Player
 {
     public static int Night { get; set; }
+    public static int CurrentTime { get; set; }
     public static int Power { get; set; }
     public static bool LeftDoorClosed { get; set; }
     public static bool RightDoorClosed { get; set; }

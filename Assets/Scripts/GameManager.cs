@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public static void InitVariables()
     {
         Player.Night = -1;
+        Player.CurrentTime = -1;
         Player.Power = -1;
         Player.LeftDoorClosed = false;
         Player.RightDoorClosed = false;
@@ -49,7 +50,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public static void SetupNight(int _dan, int _jerika, int _alyssa, int _brigette, bool _rev, bool _midna, bool _tucker, int _night, int _power)
+    public static void SetupNight(int _dan, int _jerika, int _alyssa, int _brigette, bool _rev, bool _midna, bool _tucker, int _night, int _power, int _time)
     {
         Player.DanDifficulty = _dan;
         Player.JerikaDifficulty = _jerika;
@@ -60,5 +61,43 @@ public class GameManager : MonoBehaviour
         Player.TuckerEnabled = _tucker;
         Player.Night = _night;
         Player.Power = _power;
+        Player.CurrentTime = _time;
+    }
+
+    public static void SetupNight1()
+    {
+        SetupNight(0, 0, 0, 0, false, false, false, 1, 100, 12);
+    }
+
+    /*
+    public static void SetupNight2()
+    {
+        SetupNight(0, 0, 0, 0, false, false, false, 1, 100);
+    }
+
+    public static void SetupNight3()
+    {
+        SetupNight(0, 0, 0, 0, false, false, false, 1, 100);
+    }
+
+    public static void SetupNight4()
+    {
+        SetupNight(0, 0, 0, 0, false, false, false, 1, 100);
+    }
+
+    public static void SetupNight5()
+    {
+        SetupNight(0, 0, 0, 0, false, false, false, 1, 100);
+    }
+    */
+
+    public static void Time2AM()
+    {
+        Player.JerikaDifficulty++;
+    }
+
+    public static void Time4AM()
+    {
+        Player.JerikaDifficulty++;
     }
 }
