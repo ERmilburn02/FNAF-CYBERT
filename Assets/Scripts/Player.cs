@@ -5,6 +5,7 @@
     public static bool LeftDoorClosed { get; set; }
     public static bool RightDoorClosed { get; set; }
     public static bool CameraUp { get; set; }
+    public static Room CurrentCamera { get; set; }
 
     public static bool Rev { get; set; }
     public static bool Midna { get; set; }

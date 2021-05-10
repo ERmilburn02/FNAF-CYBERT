@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DanController : MonoBehaviour
+public class JerikaController : MonoBehaviour
 {
+
+    public Room currentLocation;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,12 +20,12 @@ public class DanController : MonoBehaviour
     }
 
     /*
-        DAN ROOM ORDER
+        JERIKA ROOM ORDER
 
         RecRoom
         HallwayFar
-        HallwayClose
-        Office
+        RecRoom | Kitchen | HallwayClose
+        HallwayFar | HallwayFar | Office
 
     */
 
@@ -30,10 +33,10 @@ public class DanController : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(20 / Player.DanDifficulty);
-            if (AI.AttemptMove(Player.DanDifficulty))
+            yield return new WaitForSeconds(Random.Range(5, 10) / 2 * Player.JerikaDifficulty);
+            if (AI.AttemptMove(Player.JerikaDifficulty))
             {
-                if (!Player.CameraUp)
+                if (Player.CurrentCamera != currentLocation)
                 {
                     // INSERT MOVEMENT CODE
                 }

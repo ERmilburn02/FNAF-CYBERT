@@ -2,7 +2,8 @@
 {
     Office,
     Closet,
-    Hallway,
+    HallwayFar,
+    HallwayClose,
     Kitchen,
     RecRoom,
     Hell
