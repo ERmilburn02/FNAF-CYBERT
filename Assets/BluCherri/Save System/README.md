@@ -1,0 +1,2 @@
+# Save System
+The 2 files in this folder need editing before using. SaveSystem.cs just needs to know what the main player file is where the data is stored locally (e.g. Player.cs), and PlayerData needs that Player script, as well as you to choose what data to save. You will also need to setup the constructor in PlayerData.cs

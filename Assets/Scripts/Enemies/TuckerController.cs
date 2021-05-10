@@ -10,19 +10,22 @@ public class TuckerController : MonoBehaviour
     /// </summary>
     void Start()
     {
-        StartCoroutine(nameof(main));
+        if (Player.TuckerEnabled)
+        {
+            StartCoroutine(nameof(main));
+        }
     }
 
     IEnumerator main()
     {
         while (true)
         {
-            while (!Player.Tucker)
+            while (!Player.TuckerInOffice)
             {
                 int _x = Random.Range((10 * Player.Night), 100);
                 if (_x > 75)
                 {
-                    Player.Tucker = true;
+                    Player.TuckerInOffice = true;
                     // Show tucker
                 }
                 else

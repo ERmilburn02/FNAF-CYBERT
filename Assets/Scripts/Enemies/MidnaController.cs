@@ -25,17 +25,19 @@ public class MidnaController : MonoBehaviour
 
     public static void LookedAtCams()
     {
+        if (!Player.MidnaEnabled) { return; }
+
         MidnaController.instance.remainingCams--;
         if (MidnaController.instance.remainingCams == 0)
         {
-            MidnaController.instance.SpawnRev();
+            MidnaController.instance.SpawnMidna();
             MidnaController.instance.remainingCams = Random.Range((10 - Player.Night), 7);
         }
     }
 
-    public void SpawnRev()
+    public void SpawnMidna()
     {
-        Player.Midna = true;
+        Player.MidnaInOffice = true;
         // Show Midna in room
     }
 }
