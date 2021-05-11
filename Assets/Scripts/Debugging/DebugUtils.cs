@@ -36,4 +36,28 @@ public class DebugUtils : MonoBehaviour
         Debug.Log("SAVE_Beaten420: " + Player.SAVE_Beaten420);
         Debug.Log("===|END OF OBJECT|===");
     }
+
+    public Room DEBUG_RoomChanger = Room.RecRoom;
+    Room DRC_check;
+
+    /// <summary>
+    /// Start is called on the frame when a script is enabled just before
+    /// any of the Update methods is called the first time.
+    /// </summary>
+    void Start()
+    {
+        DRC_check = DEBUG_RoomChanger;
+    }
+
+    /// <summary>
+    /// Update is called every frame, if the MonoBehaviour is enabled.
+    /// </summary>
+    void Update()
+    {
+        if (DRC_check != DEBUG_RoomChanger)
+        {
+            Player.CurrentCamera = DEBUG_RoomChanger;
+            DRC_check = DEBUG_RoomChanger;
+        }
+    }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CameraManager : MonoBehaviour
 {
@@ -11,6 +12,10 @@ public class CameraManager : MonoBehaviour
     public RenderTexture HellRT;
     public RenderTexture KitchenRT;
     public RenderTexture RecRoomRT;
+
+    public RawImage display;
+
+    public Room currentDisplayedCamera;
 
     public Dictionary<Room, RenderTexture> cams;
 
@@ -30,5 +35,19 @@ public class CameraManager : MonoBehaviour
             {Room.Kitchen, KitchenRT},
             {Room.RecRoom, RecRoomRT}
         };
+
+        currentDisplayedCamera = Player.CurrentCamera;
+    }
+
+    /// <summary>
+    /// Update is called every frame, if the MonoBehaviour is enabled.
+    /// </summary>
+    void Update()
+    {
+        if (Player.CurrentCamera != currentDisplayedCamera)
+        {
+            display.texture = cams[Player.CurrentCamera];
+            currentDisplayedCamera = Player.CurrentCamera;
+        }
     }
 }
