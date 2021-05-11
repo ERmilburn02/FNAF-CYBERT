@@ -31,13 +31,16 @@ public class JerikaController : MonoBehaviour
 
     IEnumerator main()
     {
-        while (Player.JerikaDifficulty > 0)
+        bool ready = true;
+        while (ready)
         {
-            yield return new WaitForSeconds(Random.Range(5, 10) / (2 * Player.JerikaDifficulty));
+            ready = false;
+            yield return new WaitForSeconds(Random.Range(60, 121) / Player.JerikaDifficulty);
             if (AI.AttemptMove(Player.JerikaDifficulty))
             {
-                if (Player.CurrentCamera != currentLocation)
+                if (!Player.CameraUp || (Player.CameraUp && Player.CurrentCamera != currentLocation))
                 {
+                    if (currentLocation != Room.Office) { Debug.Log("[JERKIA]: Moved"); }
                     if (currentLocation == Room.RecRoom || currentLocation == Room.Kitchen)
                     {
                         currentLocation = Room.HallwayFar;
@@ -45,12 +48,12 @@ public class JerikaController : MonoBehaviour
                     else if (currentLocation == Room.HallwayFar)
                     {
                         Room[] _newLoc = { Room.RecRoom, Room.Kitchen, Room.HallwayClose };
-                        int _i = Random.Range(0, 2);
+                        int _i = Random.Range(0, 3);
                         currentLocation = _newLoc[_i];
                     }
                     else if (currentLocation == Room.HallwayClose)
                     {
-                        int _i = Random.Range(0, 1);
+                        int _i = Random.Range(0, 2);
                         if (_i == 1)
                         {
                             if (!Player.RightDoorClosed)
@@ -70,6 +73,7 @@ public class JerikaController : MonoBehaviour
                     }
                 }
             }
+            ready = true;
         }
     }
 }

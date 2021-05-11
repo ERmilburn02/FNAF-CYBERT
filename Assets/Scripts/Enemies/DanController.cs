@@ -29,13 +29,16 @@ public class DanController : MonoBehaviour
 
     IEnumerator main()
     {
-        while (Player.DanDifficulty > 0)
+        bool ready = true;
+        while (ready)
         {
-            yield return new WaitForSeconds(20 / Player.DanDifficulty);
+            ready = false;
+            yield return new WaitForSeconds(Random.Range(1, 6) * 20 / Player.DanDifficulty);
             if (AI.AttemptMove(Player.DanDifficulty))
             {
                 if (!Player.CameraUp)
                 {
+                    if (currentLocation != Room.Office) { Debug.Log("[DAN]: Moved"); }
                     if (currentLocation == Room.RecRoom)
                     {
                         currentLocation = Room.HallwayFar;
@@ -58,6 +61,7 @@ public class DanController : MonoBehaviour
                     }
                 }
             }
+            ready = true;
         }
     }
 }

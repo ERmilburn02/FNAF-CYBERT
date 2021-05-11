@@ -12,7 +12,7 @@ public class TuckerController : MonoBehaviour
     {
         if (Player.TuckerEnabled)
         {
-            StartCoroutine(nameof(main));
+            // StartCoroutine(nameof(main));
         }
     }
 
@@ -22,9 +22,10 @@ public class TuckerController : MonoBehaviour
         {
             while (!Player.TuckerInOffice)
             {
-                int _x = Random.Range((10 * Player.Night), 100);
-                if (_x > 75)
+                int _x = Random.Range((10 * Player.Night), 101);
+                if (_x > 90)
                 {
+                    Debug.Log("[TUCKER]: Spawned");
                     Player.TuckerInOffice = true;
                     // Show tucker
                 }

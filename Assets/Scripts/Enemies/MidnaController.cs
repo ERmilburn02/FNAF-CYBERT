@@ -11,10 +11,7 @@ public class MidnaController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (instance == null)
-        {
-            instance = this;
-        }
+        instance = this;
     }
 
     // Update is called once per frame
@@ -37,6 +34,7 @@ public class MidnaController : MonoBehaviour
 
     public void SpawnMidna()
     {
+        Debug.Log("[MIDNA]: Spawned");
         Player.MidnaInOffice = true;
         // Show Midna in room
     }

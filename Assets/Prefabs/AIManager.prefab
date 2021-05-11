@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18fc9fc2392973a4a86724d53fd482ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentLocation: 0
+  currentLocation: 5
 --- !u!114 &6246635068125504550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ff2ea25d77765942a3a4546e9c978fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentLocation: 0
+  currentLocation: 5
 --- !u!114 &6246635068125504551
 MonoBehaviour:
   m_ObjectHideFlags: 0
