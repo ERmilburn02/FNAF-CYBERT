@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DanController : MonoBehaviour
 {
+    public Room currentLocation = Room.RecRoom;
     // Start is called before the first frame update
     void Start()
     {

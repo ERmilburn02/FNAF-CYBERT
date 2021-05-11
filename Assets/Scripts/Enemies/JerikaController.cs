@@ -5,7 +5,7 @@ using UnityEngine;
 public class JerikaController : MonoBehaviour
 {
 
-    public Room currentLocation;
+    public Room currentLocation = Room.RecRoom;
 
     // Start is called before the first frame update
     void Start()
@@ -38,7 +38,36 @@ public class JerikaController : MonoBehaviour
             {
                 if (Player.CurrentCamera != currentLocation)
                 {
-                    // INSERT MOVEMENT CODE
+                    if (currentLocation == Room.RecRoom || currentLocation == Room.Kitchen)
+                    {
+                        currentLocation = Room.HallwayFar;
+                    }
+                    else if (currentLocation == Room.HallwayFar)
+                    {
+                        Room[] _newLoc = { Room.RecRoom, Room.Kitchen, Room.HallwayClose };
+                        int _i = Random.Range(0, 2);
+                        currentLocation = _newLoc[_i];
+                    }
+                    else if (currentLocation == Room.HallwayClose)
+                    {
+                        int _i = Random.Range(0, 1);
+                        if (_i == 1)
+                        {
+                            if (!Player.RightDoorClosed)
+                            {
+                                currentLocation = Room.Office;
+                                Player.JerikaInOffice = true;
+                            }
+                            else
+                            {
+                                currentLocation = Room.RecRoom;
+                            }
+                        }
+                        else
+                        {
+                            currentLocation = Room.HallwayFar;
+                        }
+                    }
                 }
             }
         }
