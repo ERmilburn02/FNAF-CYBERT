@@ -12,29 +12,32 @@ public class TuckerController : MonoBehaviour
     {
         if (Player.TuckerEnabled)
         {
-            // StartCoroutine(nameof(main));
+            StartCoroutine(nameof(main));
         }
     }
 
     IEnumerator main()
     {
-        while (true)
+        bool ready = true;
+        while (ready)
         {
-            while (!Player.TuckerInOffice)
+            ready = false;
+            int _x = Random.Range((10 * Player.Night), 101);
+            if (_x > 90)
             {
-                int _x = Random.Range((10 * Player.Night), 101);
-                if (_x > 90)
+                if (!Player.TuckerInOffice)
                 {
                     Debug.Log("[TUCKER]: Spawned");
                     Player.TuckerInOffice = true;
                     // Show tucker
                 }
-                else
-                {
-                    yield return new WaitForSeconds(20 / Player.Night);
-                }
-                yield return new WaitForSeconds(10 - Player.Night);
             }
+            else
+            {
+                yield return new WaitForSeconds(20 / Player.Night);
+            }
+            yield return new WaitForSeconds(20 - Player.Night);
+            ready = true;
         }
     }
 }
