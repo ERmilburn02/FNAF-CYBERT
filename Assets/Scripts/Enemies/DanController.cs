@@ -29,14 +29,33 @@ public class DanController : MonoBehaviour
 
     IEnumerator main()
     {
-        while (true)
+        while (Player.DanDifficulty > 0)
         {
             yield return new WaitForSeconds(20 / Player.DanDifficulty);
             if (AI.AttemptMove(Player.DanDifficulty))
             {
                 if (!Player.CameraUp)
                 {
-                    // INSERT MOVEMENT CODE
+                    if (currentLocation == Room.RecRoom)
+                    {
+                        currentLocation = Room.HallwayFar;
+                    }
+                    else if (currentLocation == Room.HallwayFar)
+                    {
+                        currentLocation = Room.HallwayClose;
+                    }
+                    else if (currentLocation == Room.HallwayClose)
+                    {
+                        if (!Player.RightDoorClosed)
+                        {
+                            currentLocation = Room.Office;
+                            Player.DanInOffice = true;
+                        }
+                        else
+                        {
+                            currentLocation = Room.HallwayFar;
+                        }
+                    }
                 }
             }
         }

@@ -31,9 +31,9 @@ public class JerikaController : MonoBehaviour
 
     IEnumerator main()
     {
-        while (true)
+        while (Player.JerikaDifficulty > 0)
         {
-            yield return new WaitForSeconds(Random.Range(5, 10) / 2 * Player.JerikaDifficulty);
+            yield return new WaitForSeconds(Random.Range(5, 10) / (2 * Player.JerikaDifficulty));
             if (AI.AttemptMove(Player.JerikaDifficulty))
             {
                 if (Player.CurrentCamera != currentLocation)
