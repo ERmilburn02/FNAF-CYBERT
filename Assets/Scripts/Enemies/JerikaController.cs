@@ -56,7 +56,7 @@ public class JerikaController : MonoBehaviour
                         int _i = Random.Range(0, 2);
                         if (_i == 1)
                         {
-                            if (!Player.RightDoorClosed)
+                            if (!Player.LeftDoorClosed)
                             {
                                 currentLocation = Room.Office;
                                 Player.JerikaInOffice = true;

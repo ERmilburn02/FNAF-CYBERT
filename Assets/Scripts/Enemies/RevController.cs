@@ -8,7 +8,7 @@ public class RevController : MonoBehaviour
 
     //Plan Make Rev an enemy that has to be checked on regularly to prevent him killing you
 
-    float maxCountdownTimer = 60 / Player.Night;
+    float maxCountdownTimer = -1;
     public float countdownTimer = -1;
 
     /// <summary>
@@ -17,6 +17,7 @@ public class RevController : MonoBehaviour
     /// </summary>
     void Start()
     {
+        maxCountdownTimer = 60 / Player.Night;
         countdownTimer = maxCountdownTimer;
     }
 

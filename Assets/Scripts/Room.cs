@@ -6,5 +6,8 @@
     HallwayClose,
     Kitchen,
     RecRoom,
-    Hell
+    Hell,
+    MasterBedroom,
+    GuestBedroom,
+    Bathroom
 }

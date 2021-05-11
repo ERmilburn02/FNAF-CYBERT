@@ -4,15 +4,33 @@ using UnityEngine;
 
 public class CameraControls : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    void SwitchCamera(Room _room)
     {
-        
+        Player.CurrentCamera = _room;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SwitchToHellCamera()
     {
-        
+        SwitchCamera(Room.Hell);
+    }
+
+    public void SwitchToHallwayFarCamera()
+    {
+        SwitchCamera(Room.HallwayFar);
+    }
+
+    public void SwitchToHallwayCloseCamera()
+    {
+        SwitchCamera(Room.HallwayClose);
+    }
+
+    public void SwitchToKitchenCamera()
+    {
+        SwitchCamera(Room.Kitchen);
+    }
+
+    public void SwitchToRecRoomCamera()
+    {
+        SwitchCamera(Room.RecRoom);
     }
 }

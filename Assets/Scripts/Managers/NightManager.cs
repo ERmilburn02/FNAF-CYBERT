@@ -1,10 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class NightManager : MonoBehaviour
 {
     public static NightManager instance;
+
+    void OnSceneLoaded(Scene _scene, LoadSceneMode _mode)
+    {
+        if (_scene.buildIndex == 2)
+        {
+            StartNight();
+        }
+    }
 
     /// <summary>
     /// Awake is called when the script instance is being loaded.
@@ -20,6 +29,22 @@ public class NightManager : MonoBehaviour
             Destroy(gameObject);
         }
         DontDestroyOnLoad(gameObject);
+    }
+
+    /// <summary>
+    /// This function is called when the object becomes enabled and active.
+    /// </summary>
+    void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    /// <summary>
+    /// This function is called when the behaviour becomes disabled or inactive.
+    /// </summary>
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
     [ContextMenu("StartNight")]
@@ -51,5 +76,17 @@ public class NightManager : MonoBehaviour
         yield return new WaitForSeconds(45);
         Player.CurrentTime = 6;
         //TODO: END NIGHT
+    }
+
+    /// <summary>
+    /// Update is called every frame, if the MonoBehaviour is enabled.
+    /// </summary>
+    void Update()
+    {
+        //TODO: Seperate these into seperate deaths
+        if (Player.DanInOffice || Player.RevInOffice || Player.MidnaInOffice || Player.AlyssaInOffice || Player.JerikaInOffice || Player.TuckerInOffice || Player.BrigetteInOffice)
+        {
+            EndNightManually();
+        }
     }
 }

@@ -48,3 +48,5 @@ MonoBehaviour:
   HellRT: {fileID: 8400000, guid: e9b63e0b1eaadf2449a32511a3cbd571, type: 2}
   KitchenRT: {fileID: 8400000, guid: 2a5f9f76f36b58c4f9713589bbcb5406, type: 2}
   RecRoomRT: {fileID: 8400000, guid: dd426b0b7fce52e468e230f3de99063c, type: 2}
+  display: {fileID: 0}
+  currentDisplayedCamera: 0

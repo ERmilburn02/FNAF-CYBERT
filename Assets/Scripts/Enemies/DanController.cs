@@ -49,7 +49,7 @@ public class DanController : MonoBehaviour
                     }
                     else if (currentLocation == Room.HallwayClose)
                     {
-                        if (!Player.RightDoorClosed)
+                        if (!Player.LeftDoorClosed)
                         {
                             currentLocation = Room.Office;
                             Player.DanInOffice = true;
