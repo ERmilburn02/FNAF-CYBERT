@@ -7,7 +7,9 @@ public class TuckerPhyiscalController : MonoBehaviour, IPointerClickHandler
 {
     public void OnPointerClick(PointerEventData eventData)
     {
-        throw new System.NotImplementedException();
+        Player.TuckerInOffice = false;
+        Debug.Log("[TUCKER]: Despawned");
+        // Hide Tucker
     }
 
 
