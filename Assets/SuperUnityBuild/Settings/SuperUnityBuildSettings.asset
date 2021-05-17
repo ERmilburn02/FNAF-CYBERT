@@ -94,8 +94,8 @@ MonoBehaviour:
     openFolderPostBuild: 1
   _productParameters:
     buildCounter: 0
-    buildVersion: 0.1
-    versionTemplate: 0.1
+    buildVersion: 0.1.1
+    versionTemplate: 0.1.1
     autoGenerate: 0
     syncWithPlayerSettings: 1
   _releaseTypeList:
@@ -111,6 +111,7 @@ MonoBehaviour:
         - fileGUID: efbe9303116ea6d429c6441b105d6c2f
         - fileGUID: bfcfa525f52281f4286cba683249e07f
         - fileGUID: d8f46266870b0f44b84022a83e02115d
+        - fileGUID: c8799af3ea9a4374fb5086f00055767e
     - typeName: Release
       bundleIdentifier: com.BluCherri.FiveNightsatCyberts
       companyName: BluCherri
@@ -122,6 +123,7 @@ MonoBehaviour:
         - fileGUID: efbe9303116ea6d429c6441b105d6c2f
         - fileGUID: bfcfa525f52281f4286cba683249e07f
         - fileGUID: d8f46266870b0f44b84022a83e02115d
+        - fileGUID: c8799af3ea9a4374fb5086f00055767e
   _platformList:
     platforms:
     - {fileID: -3538082197738286275}
@@ -271,12 +273,13 @@ MonoBehaviour:
     showBuildInfo: 0
     hideDisabled: 0
     treeView: 0
-    selectedKeyChain: 
+    selectedKeyChain: Debug/PC/Windows x86
   _preBuildActions:
     buildActions: []
   _postBuildActions:
     buildActions:
     - {fileID: 6669941717805644591}
+    - {fileID: 8076730340664645565}
 --- !u!114 &4423273221933044147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -318,8 +321,11 @@ MonoBehaviour:
   note: 
   actionEnabled: 1
   filter:
-    condition: 0
-    clauses: []
+    condition: 2
+    clauses:
+    - type: 0
+      comparison: 0
+      test: RELEASE
   pathToButlerExe: C:\Users\ERmil\AppData\Roaming\itch\apps\butler\butler.exe
   nameOfItchUser: ERmilburn02
   nameOfItchGame: FNAF-CYBERT
@@ -327,3 +333,28 @@ MonoBehaviour:
   channelName: $PLATFORM-$ARCHITECTURE
   showUploadProgress: 0
   itchChannelOverride: 
+--- !u!114 &8076730340664645565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de0f7a04940394844a505e73c3eb8cec, type: 3}
+  m_Name: ZipFileOperation
+  m_EditorClassIdentifier: 
+  actionType: 1
+  actionName: ZipFileOperation
+  note: 
+  actionEnabled: 1
+  filter:
+    condition: 2
+    clauses:
+    - type: 0
+      comparison: 0
+      test: DEBUG
+  inputPath: $BUILDPATH
+  outputPath: $BUILDPATH
+  outputFileName: $PRODUCT_NAME-$RELEASE_TYPE-$YEAR_$MONTH_$DAY.zip
