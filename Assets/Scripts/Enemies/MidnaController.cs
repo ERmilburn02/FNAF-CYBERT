@@ -23,7 +23,7 @@ public class MidnaController : MonoBehaviour
     public static void LookedAtCams()
     {
         if (!Player.MidnaEnabled) { return; }
-        if (Player.MidnaInOffice) { return; }
+        if (Player.MidnaInOffice) { MidnaController.instance.DespawnMidna(); }
 
         MidnaController.instance.remainingCams--;
         if (MidnaController.instance.remainingCams == 0)
@@ -38,5 +38,12 @@ public class MidnaController : MonoBehaviour
         Debug.Log("[MIDNA]: Spawned");
         Player.MidnaInOffice = true;
         // Show Midna in room
+    }
+
+    public void DespawnMidna()
+    {
+        Debug.Log("[MIDNA]: Despawned");
+        Player.MidnaInOffice = false;
+        // Hide Midna
     }
 }
