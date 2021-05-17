@@ -10,6 +10,7 @@ public class CameraOpener : MonoBehaviour, IPointerEnterHandler
     public void OnPointerEnter(PointerEventData eventData)
     {
         camDisplay.SetActive(!camDisplay.activeSelf);
+        MidnaController.LookedAtCams();
     }
 
     // /// <summary>

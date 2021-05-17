@@ -23,6 +23,7 @@ public class MidnaController : MonoBehaviour
     public static void LookedAtCams()
     {
         if (!Player.MidnaEnabled) { return; }
+        if (Player.MidnaInOffice) { return; }
 
         MidnaController.instance.remainingCams--;
         if (MidnaController.instance.remainingCams == 0)
