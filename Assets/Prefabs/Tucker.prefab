@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5162662521328536504}
   - component: {fileID: 1478777776597747129}
   - component: {fileID: 2939517551392643229}
+  - component: {fileID: 183536050051448316}
   m_Layer: 0
   m_Name: tucker
   m_TagString: Untagged
@@ -94,6 +95,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 341bd90ca58b2a348be85d7170154742, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tuckerObj: {fileID: 6289553967119549715}
+--- !u!61 &183536050051448316
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552012028292614156}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 8.42, y: 8.88}
+    newSize: {x: 8.42, y: 8.88}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 8.42, y: 8.88}
+  m_EdgeRadius: 0
 --- !u!1 &6289553967119549715
 GameObject:
   m_ObjectHideFlags: 0

@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
 
     public static void SetupNight3()
     {
-        SetupNight(2, 4, 0, 0, false, false, true, 1, 100, 12);
+        SetupNight(2, 4, 0, 0, false, false, /*true*/ false, 1, 100, 12);
     }
 
     /*
