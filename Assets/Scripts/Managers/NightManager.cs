@@ -82,6 +82,7 @@ public class NightManager : MonoBehaviour
         //TODO: END NIGHT
         // Disable all AI
         Player.DanDifficulty = 0;
+        Player.JerikaDifficulty = 0;
         WinScreenManager.instance.ShowWinScreen();
     }
 

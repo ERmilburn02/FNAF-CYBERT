@@ -93,11 +93,11 @@ public class GameManager : MonoBehaviour
 
     public static void Time2AM()
     {
-        // Player.JerikaDifficulty++;
+        Player.JerikaDifficulty++;
     }
 
     public static void Time4AM()
     {
-        // Player.JerikaDifficulty++;
+        Player.JerikaDifficulty++;
     }
 }

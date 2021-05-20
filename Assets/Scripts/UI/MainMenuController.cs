@@ -38,7 +38,7 @@ public class MainMenuController : MonoBehaviour
     [ContextMenu("Demo")]
     public void Demo()
     {
-        GameManager.SetupNight(8, 0, 0, 0, false, false, false, 8, 100, 12);
+        GameManager.SetupNight(8, 10, 0, 0, false, false, false, 8, 100, 12);
         SceneManager.LoadSceneAsync(2);
     }
 
