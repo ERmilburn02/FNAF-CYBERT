@@ -6,6 +6,7 @@ public class SoundManager : MonoBehaviour
 {
     public static SoundManager instance;
     public AudioClip jumpScareSound;
+    public AudioClip demoIntro;
     AudioSource audioSource;
 
     /// <summary>
@@ -30,6 +31,13 @@ public class SoundManager : MonoBehaviour
     {
         audioSource.Stop();
         audioSource.clip = jumpScareSound;
+        audioSource.Play();
+    }
+
+    public void PlayDemoIntro()
+    {
+        audioSource.Stop();
+        audioSource.clip = demoIntro;
         audioSource.Play();
     }
 }

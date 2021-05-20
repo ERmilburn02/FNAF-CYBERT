@@ -12,6 +12,10 @@ public class NightManager : MonoBehaviour
         if (_scene.buildIndex == 2)
         {
             StartNight();
+            if (Player.Night == 8)
+            {
+                SoundManager.instance.PlayDemoIntro();
+            }
         }
     }
 

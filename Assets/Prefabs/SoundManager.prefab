@@ -141,3 +141,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpScareSound: {fileID: 8300000, guid: 1e47d853a757b4445812ca55a7773b96, type: 3}
+  demoIntro: {fileID: 8300000, guid: 683f09ccdefb8df44958619105a23842, type: 3}
