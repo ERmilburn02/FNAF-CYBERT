@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TuckerController : MonoBehaviour
 {
+    public GameObject tuckerObj;
+
     /// <summary>
     /// Start is called on the frame when a script is enabled just before
     /// any of the Update methods is called the first time.
@@ -30,6 +32,7 @@ public class TuckerController : MonoBehaviour
                     Debug.Log("[TUCKER]: Spawned");
                     Player.TuckerInOffice = true;
                     // Show tucker
+                    tuckerObj.SetActive(true);
                 }
             }
             else

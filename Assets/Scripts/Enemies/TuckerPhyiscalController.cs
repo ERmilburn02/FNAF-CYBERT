@@ -10,6 +10,7 @@ public class TuckerPhyiscalController : MonoBehaviour, IPointerClickHandler
         Player.TuckerInOffice = false;
         Debug.Log("[TUCKER]: Despawned");
         // Hide Tucker
+        GetComponentInParent<Transform>().gameObject.SetActive(false);
     }
 
 
