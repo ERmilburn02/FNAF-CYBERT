@@ -49,6 +49,7 @@ public class DanPhysicalController : MonoBehaviour
 
     IEnumerator YoureAlreadyDead()
     {
+        SoundManager.instance.PlayJumpScareSound();
         yield return new WaitForSeconds(3);
         if (Player.CurrentTime != 6)
         {

@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class InitSceneManager : MonoBehaviour
 {
+    public GameObject SM;
     void Start()
     {
         if (Debug.isDebugBuild)
@@ -17,6 +18,8 @@ public class InitSceneManager : MonoBehaviour
         var _goNM = new GameObject { name = "[NIGHT MANAGER]" };
         _goNM.AddComponent<NightManager>();
         DontDestroyOnLoad(_goNM);
+
+        Instantiate(SM);
 
         GameManager.InitVariables();
         GameManager.LoadGame();
