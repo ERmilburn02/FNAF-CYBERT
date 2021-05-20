@@ -61,21 +61,24 @@ public class NightManager : MonoBehaviour
 
     IEnumerator Night()
     {
-        yield return new WaitForSeconds(45);
+        yield return new WaitForSeconds(30);
         Player.CurrentTime = 1;
-        yield return new WaitForSeconds(45);
+        yield return new WaitForSeconds(30);
         Player.CurrentTime = 2;
         GameManager.Time2AM();
-        yield return new WaitForSeconds(45);
+        yield return new WaitForSeconds(30);
         Player.CurrentTime = 3;
-        yield return new WaitForSeconds(45);
+        yield return new WaitForSeconds(30);
         Player.CurrentTime = 4;
         GameManager.Time4AM();
-        yield return new WaitForSeconds(45);
+        yield return new WaitForSeconds(30);
         Player.CurrentTime = 5;
-        yield return new WaitForSeconds(45);
+        yield return new WaitForSeconds(30);
         Player.CurrentTime = 6;
         //TODO: END NIGHT
+        // Disable all AI
+        Player.DanDifficulty = 0;
+        WinScreenManager.instance.ShowWinScreen();
     }
 
     /// <summary>

@@ -66,38 +66,38 @@ public class GameManager : MonoBehaviour
 
     public static void SetupNight1()
     {
-        SetupNight(0, 0, 0, 0, false, false, false, 1, 100, 12);
+        SetupNight(3, 0, 0, 0, false, false, false, 1, 100, 12);
     }
 
     public static void SetupNight2()
     {
-        SetupNight(1, 2, 0, 0, false, false, false, 1, 100, 12);
+        // SetupNight(1, 2, 0, 0, false, false, false, 1, 100, 12);
     }
 
     public static void SetupNight3()
     {
-        SetupNight(2, 4, 0, 0, false, false, /*true*/ false, 1, 100, 12);
+        // SetupNight(2, 4, 0, 0, false, false, /*true*/ false, 1, 100, 12);
     }
 
     /*
     public static void SetupNight4()
     {
-        SetupNight(0, 0, 0, 0, false, false, false, 1, 100);
+        SetupNight(0, 0, 0, 0, false, false, false, 1, 100, 12);
     }
 
     public static void SetupNight5()
     {
-        SetupNight(0, 0, 0, 0, false, false, false, 1, 100);
+        SetupNight(0, 0, 0, 0, false, false, false, 1, 100, 12);
     }
     */
 
     public static void Time2AM()
     {
-        Player.JerikaDifficulty++;
+        // Player.JerikaDifficulty++;
     }
 
     public static void Time4AM()
     {
-        Player.JerikaDifficulty++;
+        // Player.JerikaDifficulty++;
     }
 }

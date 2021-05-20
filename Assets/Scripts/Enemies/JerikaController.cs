@@ -35,43 +35,50 @@ public class JerikaController : MonoBehaviour
         while (ready)
         {
             ready = false;
-            yield return new WaitForSeconds(Random.Range(60, 121) / Player.JerikaDifficulty);
-            if (AI.AttemptMove(Player.JerikaDifficulty))
+            if (Player.JerikaDifficulty != 0)
             {
-                if (!Player.CameraUp || (Player.CameraUp && Player.CurrentCamera != currentLocation))
+                yield return new WaitForSeconds(Random.Range(60, 121) / Player.JerikaDifficulty);
+                if (AI.AttemptMove(Player.JerikaDifficulty))
                 {
-                    if (currentLocation != Room.Office) { Debug.Log("[JERKIA]: Moved"); }
-                    if (currentLocation == Room.RecRoom || currentLocation == Room.Kitchen)
+                    if (!Player.CameraUp || (Player.CameraUp && Player.CurrentCamera != currentLocation))
                     {
-                        currentLocation = Room.HallwayFar;
-                    }
-                    else if (currentLocation == Room.HallwayFar)
-                    {
-                        Room[] _newLoc = { Room.RecRoom, Room.Kitchen, Room.HallwayClose };
-                        int _i = Random.Range(0, 3);
-                        currentLocation = _newLoc[_i];
-                    }
-                    else if (currentLocation == Room.HallwayClose)
-                    {
-                        int _i = Random.Range(0, 2);
-                        if (_i == 1)
-                        {
-                            if (!Player.LeftDoorClosed)
-                            {
-                                currentLocation = Room.Office;
-                                Player.JerikaInOffice = true;
-                            }
-                            else
-                            {
-                                currentLocation = Room.RecRoom;
-                            }
-                        }
-                        else
+                        if (currentLocation != Room.Office) { Debug.Log("[JERKIA]: Moved"); }
+                        if (currentLocation == Room.RecRoom || currentLocation == Room.Kitchen)
                         {
                             currentLocation = Room.HallwayFar;
                         }
+                        else if (currentLocation == Room.HallwayFar)
+                        {
+                            Room[] _newLoc = { Room.RecRoom, Room.Kitchen, Room.HallwayClose };
+                            int _i = Random.Range(0, 3);
+                            currentLocation = _newLoc[_i];
+                        }
+                        else if (currentLocation == Room.HallwayClose)
+                        {
+                            int _i = Random.Range(0, 2);
+                            if (_i == 1)
+                            {
+                                if (!Player.LeftDoorClosed)
+                                {
+                                    currentLocation = Room.Office;
+                                    Player.JerikaInOffice = true;
+                                }
+                                else
+                                {
+                                    currentLocation = Room.RecRoom;
+                                }
+                            }
+                            else
+                            {
+                                currentLocation = Room.HallwayFar;
+                            }
+                        }
                     }
                 }
+            }
+            else
+            {
+                yield return new WaitForSeconds(20);
             }
             ready = true;
         }

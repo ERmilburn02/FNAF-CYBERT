@@ -35,6 +35,13 @@ public class MainMenuController : MonoBehaviour
         SceneManager.LoadSceneAsync(2);
     }
 
+    [ContextMenu("Demo")]
+    public void Demo()
+    {
+        GameManager.SetupNight(5, 0, 0, 0, false, false, false, 3, 100, 12);
+        SceneManager.LoadSceneAsync(2);
+    }
+
 
     [ContextMenu("CustomNight")]
     public void LaunchCustomNight()
