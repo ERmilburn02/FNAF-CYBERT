@@ -1,14 +1,17 @@
 # FNAF-CYBERT
 FNAF Fan Game for ThatCybertChannel
-## DUE 20th May 2021
 ## TODO
-- [ ] Make and Import Models / Sprites <b>BASED ON TIME</b>
-- [ ] Finish Core Game loop
-- [ ] Test difficulty <i>(Might need help with this)</i>
-- [ ] Build and upload to Itch
-- [ ] Test again from Itch
-- [ ] Test again on different devices
-- [ ] Get others to test
-- [ ] <i>Potentially</i> Get Jerika to take a look
-- [ ] Test again
-- [ ] Did I mention testing again?
+- [X] Make and Import Models / Sprites <b>BASED ON TIME</b>
+- [X] Finish Core Game loop
+- [X] Test difficulty <i>(Might need help with this)</i>
+- [X] Build and upload to Itch
+- [X] Test again from Itch
+- [X] Test again on different devices
+- [X] Get others to test
+- [X] Test again
+- [X] Did I mention testing again?
+- [ ] Finish Alyssa
+- [ ] Finish Brigette
+- [ ] Finish Tucker
+- [ ] Finish Midna
+- [ ] Finish Rev
